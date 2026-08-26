@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://sezavarpishgam.com/sitemap.xml
+Host: https://sezavarpishgam.com
