@@ -1,0 +1,21 @@
+{
+  "id": "/university-demo/",
+  "name": "University AI Assistant",
+  "short_name": "UAI",
+  "description": "Demo student services assistant",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/university-demo/",
+  "scope": "/university-demo/",
+  "display": "standalone",
+  "background_color": "#061a30",
+  "theme_color": "#061a30",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
