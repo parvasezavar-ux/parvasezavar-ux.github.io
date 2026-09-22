@@ -415,6 +415,177 @@
   .ai-note{display:none}
 }
 
+/* ===== UAI-HOME-R1.2: final visual polish — Home only ===== */
+.nav-svg{display:none}
+.app.home-view .home-avatar svg,
+.app.home-view .home-bell svg,
+.app.home-view .home-mic svg,
+.app.home-view .home-send svg,
+.app.home-view .home-action-icon svg,
+.app.home-view .home-action-chevron svg,
+.app.home-view .service-icon svg,
+.app.home-view .nav-svg svg{
+  width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke
+}
+.app.home-view .home-mic{
+  width:44px;height:44px;border-radius:50%;padding:0;display:grid;place-items:center;
+  color:#d9efff;border:1px solid rgba(201,234,255,.58);
+  background:
+    linear-gradient(145deg,rgba(98,180,248,.22),rgba(7,36,67,.84));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 0 0 15px rgba(130,205,255,.09),
+    0 0 12px rgba(66,166,255,.18);
+  opacity:1;cursor:default
+}
+.app.home-view .home-mic:disabled{opacity:1;color:#d9efff}
+.app.home-view .home-chatbar{
+  min-height:66px;padding:7px 8px;
+  border-color:rgba(213,238,255,.78);
+  background:
+    linear-gradient(180deg,rgba(36,84,132,.92),rgba(8,38,71,.97));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -1px 0 rgba(101,181,245,.12),
+    inset 0 0 26px rgba(113,194,255,.08),
+    0 0 10px rgba(107,196,255,.34),
+    0 0 24px rgba(37,132,230,.20)
+}
+.app.home-view .home-chatbar:after{
+  content:"";position:absolute;left:15%;right:15%;bottom:3px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(120,198,255,.28),transparent)
+}
+.app.home-view .home-send{
+  width:52px;height:52px;border-radius:50%;
+  border-color:rgba(226,245,255,.86);
+  background:
+    radial-gradient(circle at 34% 25%,rgba(213,241,255,.28),transparent 27%),
+    linear-gradient(145deg,#63baff,#2075d4 58%,#0c4a9e);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.38),
+    inset 0 -8px 14px rgba(4,54,128,.20),
+    0 0 10px rgba(132,212,255,.60),
+    0 0 22px rgba(45,145,250,.35)
+}
+.app.home-view .home-send svg{width:23px;height:23px}
+.app.home-view .home-action{
+  min-height:112px;
+  padding:11px 12px 11px 42px;
+  border-color:rgba(195,229,255,.55);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.075),transparent 29%),
+    radial-gradient(circle at 88% 8%,rgba(118,197,255,.10),transparent 24%),
+    radial-gradient(circle at 10% 15%,rgba(62,157,246,.15),transparent 30%),
+    linear-gradient(150deg,rgba(22,70,114,.94),rgba(5,29,56,.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 1px 0 0 rgba(166,220,255,.05),
+    inset 0 -16px 28px rgba(0,10,24,.13),
+    0 7px 18px rgba(0,0,0,.18),
+    0 0 13px rgba(47,145,242,.12)
+}
+.app.home-view .home-action:before{
+  left:16px;right:16px;
+  background:linear-gradient(90deg,transparent,rgba(235,248,255,.95) 42%,rgba(127,205,255,.65) 62%,transparent);
+  box-shadow:0 0 9px rgba(89,184,255,.64);opacity:.70
+}
+.app.home-view .home-action:after{content:none}
+.app.home-view .home-action-icon{
+  width:46px;height:46px;border-radius:14px;margin-bottom:7px;
+  border-color:rgba(208,237,255,.64);
+  background:
+    radial-gradient(circle at 32% 25%,rgba(207,239,255,.18),transparent 27%),
+    linear-gradient(145deg,rgba(88,175,248,.28),rgba(6,38,73,.82));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.15),
+    inset 0 0 14px rgba(135,207,255,.09),
+    0 0 13px rgba(64,164,255,.18)
+}
+.app.home-view .home-action b{font-size:12.5px;margin-bottom:2px}
+.app.home-view .home-action small{font-size:8.8px;line-height:1.58}
+.app.home-view .home-action-chevron{
+  position:absolute;left:11px;bottom:11px;width:25px;height:25px;border-radius:50%;
+  display:grid;place-items:center;color:#dcefff;
+  border:1px solid rgba(184,224,255,.30);
+  background:linear-gradient(145deg,rgba(66,148,226,.20),rgba(9,43,78,.58));
+  box-shadow:inset 0 0 10px rgba(111,193,255,.06)
+}
+.app.home-view .home-action-chevron svg{width:15px;height:15px}
+.app.home-view .home-status{
+  min-height:70px;padding:10px 11px;
+  border-color:rgba(197,231,255,.51);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.045),transparent 31%),
+    linear-gradient(145deg,rgba(22,68,110,.91),rgba(5,29,55,.97));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -1px 0 rgba(98,177,239,.08),
+    0 0 12px rgba(50,151,247,.10)
+}
+.app.home-view .home-status-item{display:flex;flex-direction:column;justify-content:center;padding:0 9px}
+.app.home-view .home-status-item+.home-status-item{border-right-color:rgba(211,237,255,.28)}
+.app.home-view .home-status-label{font-size:8.5px;margin-bottom:5px}
+.app.home-view .home-status-value{font-size:10.5px}
+.app.home-view .home-services{gap:7px}
+.app.home-view .home-service{
+  min-height:94px;padding:9px 4px;border-color:rgba(195,229,255,.51);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.06),transparent 31%),
+    linear-gradient(150deg,rgba(20,65,106,.93),rgba(5,29,55,.97));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -12px 22px rgba(0,11,26,.10),
+    0 0 11px rgba(49,148,245,.10)
+}
+.app.home-view .service-icon{
+  width:44px;height:44px;border-radius:14px;
+  border-color:rgba(207,237,255,.61);
+  background:
+    radial-gradient(circle at 32% 24%,rgba(205,238,255,.16),transparent 27%),
+    linear-gradient(145deg,rgba(84,169,241,.25),rgba(7,38,72,.82));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 11px rgba(61,162,255,.15)
+}
+.app.home-view .home-section-head{margin-top:17px;margin-bottom:8px}
+.app.home-view .home-section-head h2{font-size:15.5px}
+.app.home-view .bottom{
+  padding:7px 7px calc(7px + env(safe-area-inset-bottom));
+  border-top-color:rgba(198,231,255,.38);
+  background:
+    linear-gradient(180deg,rgba(7,31,58,.96),rgba(2,15,30,.99));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 -10px 28px rgba(0,0,0,.30),
+    0 -2px 13px rgba(47,147,247,.08)
+}
+.app.home-view .nav{min-height:57px;border-radius:17px;padding:6px 3px;color:#7898b8;font-size:9.5px}
+.app.home-view .nav-glyph{display:none}
+.app.home-view .nav-svg{
+  width:24px;height:24px;margin:0 auto 4px;display:grid;place-items:center;color:inherit
+}
+.app.home-view .nav-svg svg{width:21px;height:21px}
+.app.home-view .nav.active{
+  color:#fff;
+  border-color:rgba(203,235,255,.45);
+  background:
+    radial-gradient(circle at 50% 18%,rgba(121,203,255,.16),transparent 40%),
+    linear-gradient(145deg,rgba(52,137,220,.36),rgba(9,47,88,.84));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 0 0 18px rgba(106,191,255,.07),
+    0 0 12px rgba(71,174,255,.20)
+}
+.app.home-view .nav.active .nav-svg{
+  color:#f6fbff;
+  filter:drop-shadow(0 0 5px rgba(101,198,255,.56))
+}
+@media (max-width:410px){
+  .app.home-view .home-chatbar{grid-template-columns:44px minmax(0,1fr) 52px}
+  .app.home-view .home-action{padding-left:40px}
+  .app.home-view .home-action small{font-size:8.6px}
+  .app.home-view .home-service span:last-child{font-size:8.8px}
+}
+
 </style>
 </head>
 <body>
@@ -451,10 +622,10 @@
   </div>
 
   <div class="home-chatbar">
-    <span class="home-input-orb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="m5.6 5.6 2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></span>
+    <button class="home-mic" type="button" disabled aria-label="میکروفون در نسخه دمو غیرفعال است"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v3M9 21h6"/></svg></button>
     <input id="homeQ" inputmode="text" autocomplete="off" aria-label="سؤال از دستیار هوشمند" placeholder="سؤال یا درخواستت را اینجا بنویس...">
     <button class="home-send" type="button" onclick="sendHomeQuestion()" aria-label="ارسال سؤال">
-      <svg viewBox="0 0 24 24"><path d="m5 12 14-7-4 14-3-5-7-2Z"/><path d="m12 14 3-3"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></svg>
     </button>
   </div>
 </div>
@@ -462,24 +633,28 @@
 <div class="home-section-head"><h2>دسترسی سریع</h2><span>قابلیت‌های معتبر نسخه دمو</span></div>
 <div class="home-actions">
   <button class="home-action" type="button" onclick="go('assistant')">
-    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 9h8M8 13h5"/><path d="M6 19l-2 2v-5a8 8 0 1 1 3 3Z"/></svg></div>
+    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18.5 4 21v-5a8 8 0 1 1 3 2.5Z"/><path d="M8 9h8M8 13h5"/></svg></div>
     <b>پاسخ‌گویی سریع دانشجو</b>
     <small>پرسش درباره اطلاعات و فرایندهای آموزشی نمونه</small>
+    <span class="home-action-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 7-5 5 5 5"/></svg></span>
   </button>
   <button class="home-action" type="button" onclick="go('requests')">
-    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></svg></div>
+    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v7"/><path d="M14 3v5h5"/><path d="M9 12h4M9 16h2"/><circle cx="16.5" cy="16.5" r="3.5"/><path d="m19 19 2 2"/></svg></div>
     <b>پیگیری درخواست</b>
     <small>مشاهده وضعیت مرحله‌ای درخواست نمایشی</small>
+    <span class="home-action-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 7-5 5 5 5"/></svg></span>
   </button>
   <button class="home-action" type="button" onclick="go('services')">
-    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v3M18 2v3M4 8h16"/><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 12h3M8 16h5"/></svg></div>
-    <b>یادآوری و مهلت‌ها</b>
-    <small>دسترسی به تقویم و مهلت‌های تأییدشده در نسخه واقعی</small>
+    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 7-3 9h18c0-2-3-3-3-9"/><path d="M10 21h4"/></svg></div>
+    <b>یادآوری و اعلان</b>
+    <small>راهنمای مهلت‌ها و اعلان‌های نمایشی؛ بدون اعلان زنده</small>
+    <span class="home-action-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 7-5 5 5 5"/></svg></span>
   </button>
   <button class="home-action" type="button" onclick="go('services')">
-    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10 12 4l9 6-9 6-9-6Z"/><path d="M7 13v4c3 2 7 2 10 0v-4"/></svg></div>
-    <b>خدمات آموزشی</b>
-    <small>انتخاب واحد، حذف‌و‌اضافه و راهنمای فرایندها</small>
+    <div class="home-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 12h2M13 12h2M9 16h2M13 16h2"/></svg></div>
+    <b>دانشکده و واحدها</b>
+    <small>دسترسی نمایشی به خدمات آموزشی؛ بدون فهرست واقعی دانشگاه</small>
+    <span class="home-action-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 7-5 5 5 5"/></svg></span>
   </button>
 </div>
 
@@ -491,10 +666,10 @@
 
 <div class="home-section-head"><h2>خدمات پرتکرار</h2><span>دامنه تأییدشده</span></div>
 <div class="home-services">
-  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4Z"/><path d="M8 9h8M8 13h5"/></svg></span><span>انتخاب واحد</span></button>
-  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span>حذف‌و‌اضافه</span></button>
-  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2v3M18 2v3M4 8h16"/><rect x="3" y="4" width="18" height="17" rx="3"/></svg></span><span>مهلت‌ها</span></button>
-  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span>راهنمای فرایندها</span></button>
+  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-6 9 6-9 6-9-6Z"/><path d="M7 13v4c3 2 7 2 10 0v-4"/></svg></span><span>انتخاب واحد</span></button>
+  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h8M4 12h7M4 18h8"/><path d="M17 9v6M14 12h6"/></svg></span><span>حذف‌و‌اضافه</span></button>
+  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 17h6"/></svg></span><span>مهلت‌ها</span></button>
+  <button class="home-service" type="button" onclick="go('services')"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span>راهنمای فرایندها</span></button>
 </div>
 
 <div class="home-footnote">این نسخه صرفاً دمو است و به سامانه واقعی دانشگاه یا اطلاعات شخصی دانشجو متصل نیست.</div>
@@ -533,11 +708,11 @@
 </section>
 </main>
 <nav class="bottom">
-<button class="nav active" data-target="home" onclick="go('home')"><span>⌂</span>خانه</button>
-<button class="nav" data-target="assistant" onclick="go('assistant')"><span>✦</span>دستیار</button>
-<button class="nav" data-target="services" onclick="go('services')"><span>◫</span>خدمات</button>
-<button class="nav" data-target="requests" onclick="go('requests')"><span>✓</span>درخواست</button>
-<button class="nav" data-target="management" onclick="go('management')"><span>▥</span>مدیریت</button>
+<button class="nav active" data-target="home" onclick="go('home')"><span class="nav-glyph">⌂</span><span class="nav-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg></span>خانه</button>
+<button class="nav" data-target="assistant" onclick="go('assistant')"><span class="nav-glyph">✦</span><span class="nav-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg></span>دستیار</button>
+<button class="nav" data-target="services" onclick="go('services')"><span class="nav-glyph">◫</span><span class="nav-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>خدمات</button>
+<button class="nav" data-target="requests" onclick="go('requests')"><span class="nav-glyph">✓</span><span class="nav-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6Z"/><path d="M14 3v4h4"/><path d="m9 14 2 2 4-5"/></svg></span>درخواست</button>
+<button class="nav" data-target="management" onclick="go('management')"><span class="nav-glyph">▥</span><span class="nav-svg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/><path d="M3 20h18"/></svg></span>مدیریت</button>
 </nav>
 </div>
 <div id="modal" class="modal" onclick="hideModal(event)"><div class="sheet"><h3>هدف این نسخه</h3><p>این دمو برای نشان‌دادن یک اجرای آزمایشی محدود ساخته شده است: پاسخ‌گویی، خدمات آموزشی، مهلت‌ها و پیگیری درخواست. هیچ اتصال واقعی یا داده شخصی در آن وجود ندارد.</p><button class="btn" onclick="hideModal()">متوجه شدم</button></div></div>
