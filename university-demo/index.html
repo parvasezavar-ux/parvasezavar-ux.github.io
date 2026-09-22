@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c3b32">
+<title>دستیار هوشمند خدمات دانشجویی — نسخه نمایشی</title>
+<style>
+:root{--bg:#f4f7f5;--card:#fff;--ink:#14201c;--muted:#6c7772;--green:#0c3b32;--green2:#155747;--gold:#c8a94a;--line:#dfe8e3;--soft:#eaf2ee;--shadow:0 10px 28px rgba(12,59,50,.10)}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:linear-gradient(180deg,#f7faf8 0%,#f2f6f4 100%);padding-bottom:92px}
+.top{position:sticky;top:0;z-index:20;background:rgba(247,250,248,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(12,59,50,.08);padding:calc(10px + env(safe-area-inset-top)) 16px 11px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}.logo{width:42px;height:42px;border-radius:12px}.brand-title{font-weight:800;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand-sub{font-size:11px;color:var(--muted);margin-top:2px}.demo-badge{background:#fff6d9;border:1px solid #ead38b;color:#725b16;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800;white-space:nowrap}
+.screen{display:none;padding:18px 16px 22px}.screen.active{display:block}
+.hero{background:linear-gradient(145deg,var(--green),#174f43);color:#fff;border-radius:24px;padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:rgba(200,169,74,.16);left:-48px;top:-55px}.eyebrow{font-size:12px;color:#d9e9e3;font-weight:700}h1{font-size:25px;line-height:1.55;margin:5px 0 8px}.hero p{margin:0;color:#e8f2ee;font-size:13px;line-height:1.9}.hero-actions{display:flex;gap:9px;margin-top:17px;position:relative;z-index:1}
+.btn{border:0;border-radius:14px;padding:12px 15px;font-weight:800;font-size:13px;transition:.16s}.btn:active{transform:scale(.97)}.btn-gold{background:var(--gold);color:#23352f}.btn-light{background:#fff;color:var(--green)}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 11px}.section-head h2{font-size:16px;margin:0}.section-head span{font-size:11px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:0 5px 16px rgba(12,59,50,.05)}
+.quick{min-height:122px;text-align:right;width:100%;transition:.18s}.quick:active,.quick.selected{transform:scale(.98);background:linear-gradient(180deg,#f8fbfa,#e8f2ed);border-color:#87ad9d;box-shadow:0 10px 24px rgba(12,59,50,.14)}
+.icon{width:38px;height:38px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:19px;margin-bottom:10px}.quick b{display:block;font-size:13px;margin-bottom:5px}.quick small{display:block;color:var(--muted);font-size:11px;line-height:1.7}
+.page-title{font-size:22px;margin:4px 0 5px}.page-sub{font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 16px}.notice{background:#fff9e6;border:1px solid #edd894;color:#6e591b;border-radius:14px;padding:10px 12px;font-size:10px;line-height:1.75;margin-bottom:12px}
+.chat-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;min-height:300px;display:flex;flex-direction:column;gap:10px}.msg{max-width:88%;padding:11px 13px;border-radius:16px;font-size:12px;line-height:1.9}.msg.bot{align-self:flex-start;background:var(--soft);border-bottom-left-radius:5px}.msg.user{align-self:flex-end;background:var(--green);color:#fff;border-bottom-right-radius:5px}.source{display:block;margin-top:7px;color:#55746a;font-size:10px;font-weight:700}
+.chips{display:flex;gap:7px;overflow:auto;padding:11px 1px 4px}.chip{border:1px solid #cadad3;background:#fff;color:var(--green);border-radius:999px;padding:9px 11px;white-space:nowrap;font-size:11px;font-weight:700}.chat-input{display:flex;gap:8px;margin-top:11px}.chat-input input{flex:1;border:1px solid var(--line);border-radius:13px;padding:12px;background:#fff;outline:none}.send{width:45px;border:0;border-radius:13px;background:var(--gold);font-weight:900}
+.deadline{display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid var(--line)}.deadline:last-child{border:0}.datebox{width:52px;min-width:52px;text-align:center;background:var(--soft);border-radius:13px;padding:8px 4px;color:var(--green)}.datebox strong{display:block;font-size:16px}.datebox span{font-size:10px}.deadline h3{font-size:13px;margin:0 0 4px}.deadline p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}
+.timeline{position:relative;padding-right:14px}.step{position:relative;padding:0 28px 20px 0}.step:before{content:"";position:absolute;right:4px;top:6px;width:11px;height:11px;border-radius:50%;background:#c9d7d1;border:3px solid #fff;box-shadow:0 0 0 1px #c9d7d1}.step.done:before{background:var(--green);box-shadow:0 0 0 1px var(--green)}.step:after{content:"";position:absolute;right:9px;top:21px;width:1px;height:calc(100% - 10px);background:#d9e4df}.step:last-child:after{display:none}.step b{font-size:13px}.step p{margin:4px 0 0;color:var(--muted);font-size:11px;line-height:1.7}.status{display:inline-flex;border-radius:999px;background:#e7f3ed;color:#185b48;padding:6px 9px;font-size:10px;font-weight:800}
+.guide-item{width:100%;text-align:right;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;margin-bottom:9px}.guide-item .row{display:flex;align-items:center;justify-content:space-between}.guide-item p{display:none;margin:11px 0 0;padding-top:11px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.9}.guide-item.open p{display:block}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px}.metric strong{display:block;font-size:24px;color:var(--green);margin-bottom:4px}.metric span{font-size:11px;color:var(--muted)}
+.bottom{position:fixed;z-index:30;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.nav{border:0;background:transparent;border-radius:13px;padding:7px 4px;color:#75807b;font-size:10px;font-weight:700}.nav span{display:block;font-size:18px;line-height:1;margin-bottom:4px}.nav.active{color:var(--green);background:#edf4f1}
+.modal{display:none;position:fixed;z-index:50;inset:0;background:rgba(7,26,21,.45);padding:22px;align-items:flex-end;justify-content:center}.modal.show{display:flex}.sheet{width:min(480px,100%);background:#fff;border-radius:22px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.22)}.sheet h3{margin:0 0 8px;font-size:17px}.sheet p{font-size:12px;color:var(--muted);line-height:1.9}.sheet .btn{width:100%;background:var(--green);color:#fff;margin-top:8px}
+.footer-note{text-align:center;color:#8a948f;font-size:9px;padding:18px 8px 0;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+<div class="brand"><img class="logo" src="/favicon.svg" alt="PS"><div><div class="brand-title">دستیار هوشمند خدمات دانشجویی</div><div class="brand-sub">شرکت سزاوار پیشگامان فناوری نوین</div></div></div>
+<div class="demo-badge">نسخه نمایشی</div>
+</header>
+<main>
+<section id="home" class="screen active">
+<div class="hero"><div class="eyebrow">نمونه پیشنهادی برای اجرای آزمایشی محدود</div><h1>پاسخ سریع‌تر، پیگیری روشن‌تر، مراجعه کمتر</h1><p>یک لایه ساده و هوشمند برای پاسخ‌گویی دانشجویی، راهنمای فرایندها، یادآوری مهلت‌ها و پیگیری درخواست‌ها.</p><div class="hero-actions"><button class="btn btn-gold" onclick="go('assistant')">نمایش دستیار AI</button><button class="btn btn-light" onclick="showModal()">هدف دمو</button></div></div>
+<div class="section-head"><h2>کارهای اصلی</h2><span>داده‌ها آزمایشی‌اند</span></div>
+<div class="grid2">
+<button class="card quick" onclick="tile(this,'assistant')"><div class="icon">✦</div><b>پرسش از دستیار</b><small>انتخاب واحد، حذف‌و‌اضافه، مدارک و امور آموزشی</small></button>
+<button class="card quick" onclick="tile(this,'services')"><div class="icon">◫</div><b>خدمات آموزشی</b><small>انتخاب واحد، حذف‌و‌اضافه، تقویم و مدارک</small></button>
+<button class="card quick" onclick="tile(this,'requests')"><div class="icon">✓</div><b>پیگیری درخواست</b><small>وضعیت مرحله‌به‌مرحله بدون تماس و مراجعه</small></button>
+<button class="card quick" onclick="tile(this,'management')"><div class="icon">▥</div><b>نمای مدیریتی</b><small>شاخص‌های نمونه برای سنجش اجرای آزمایشی</small></button>
+</div>
+<div class="section-head"><h2>مهلت‌های مهم نمونه</h2><span>تقویم نمایشی</span></div>
+<div class="card">
+<div class="deadline"><div class="datebox"><strong>۲۵</strong><span>شهریور</span></div><div><h3>پایان حذف‌و‌اضافه</h3><p>تا ساعت ۲۳:۵۹ — تقویم آموزشی نمونه</p></div></div>
+<div class="deadline"><div class="datebox"><strong>۳۰</strong><span>شهریور</span></div><div><h3>آخرین مهلت تکمیل مدارک</h3><p>برای درخواست‌های آموزشی ثبت‌شده</p></div></div>
+</div>
+<div class="footer-note">این نسخه صرفاً دمو است و به هیچ سامانه واقعی دانشگاه متصل نیست.</div>
+</section>
+
+<section id="assistant" class="screen">
+<h2 class="page-title">دستیار هوشمند دانشجو</h2><p class="page-sub">پاسخ‌ها در این دمو فقط از محتوای نمونه و تأییدشده داخلی تولید می‌شوند.</p><div class="notice">بدون اتصال به اطلاعات شخصی دانشجو.</div>
+<div id="chat" class="chat-box"><div class="msg bot">سلام. درباره انتخاب واحد، حذف‌و‌اضافه، مدارک، امتحانات یا فرایندهای آموزشی سؤال بپرسید.<span class="source">منبع: پایگاه دانش نمایشی دانشگاه</span></div></div>
+<div class="chips"><button class="chip" onclick="ask('حذف‌و‌اضافه تا چه زمانی است؟')">مهلت حذف‌و‌اضافه</button><button class="chip" onclick="ask('برای انتخاب واحد از کجا شروع کنم؟')">انتخاب واحد</button><button class="chip" onclick="ask('برای تکمیل مدارک چه کار کنم؟')">تکمیل مدارک</button></div>
+<div class="chat-input"><input id="q" placeholder="مثلاً: انتخاب واحد از کجا انجام می‌شود؟"><button class="send" onclick="sendInput()">➤</button></div>
+</section>
+
+<section id="services" class="screen">
+<h2 class="page-title">خدمات آموزشی</h2><p class="page-sub">نمونه‌ای از خدمات پرتکرار برای دسترسی سریع‌تر دانشجو.</p>
+<div class="grid2">
+<div class="card"><div class="icon">◔</div><b>انتخاب واحد</b><small style="display:block;color:var(--muted);margin-top:6px">پیش‌نیازها و ثبت نهایی</small></div>
+<div class="card"><div class="icon">⊕</div><b>حذف‌و‌اضافه</b><small style="display:block;color:var(--muted);margin-top:6px">مهلت و ثبت تغییرات</small></div>
+<div class="card"><div class="icon">☰</div><b>مدارک</b><small style="display:block;color:var(--muted);margin-top:6px">نقص مدارک و تکمیل</small></div>
+<div class="card"><div class="icon">⌚</div><b>مهلت‌ها</b><small style="display:block;color:var(--muted);margin-top:6px">تقویم و یادآوری</small></div>
+</div>
+<div class="section-head"><h2>راهنمای فرایندها</h2></div>
+<button class="guide-item" onclick="toggleGuide(this)"><div class="row"><b>انتخاب واحد</b><span>＋</span></div><p>ورود به سامانه آموزشی، بررسی پیش‌نیازها، انتخاب دروس و ثبت نهایی. در نسخه واقعی، قوانین دقیق همان دانشگاه نمایش داده می‌شود.</p></button>
+<button class="guide-item" onclick="toggleGuide(this)"><div class="row"><b>حذف‌و‌اضافه</b><span>＋</span></div><p>بررسی بازه مجاز، مشاهده ظرفیت، ثبت تغییر و دریافت تأیید. سامانه می‌تواند قبل از پایان مهلت یادآوری کند.</p></button>
+</section>
+
+<section id="requests" class="screen">
+<h2 class="page-title">پیگیری درخواست</h2><p class="page-sub">وضعیت روشن بدون تماس یا مراجعه مکرر.</p>
+<div class="card" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><b>درخواست بررسی انتخاب واحد</b><div style="font-size:10px;color:var(--muted);margin-top:5px">کد نمونه: EDU-1405-218</div></div><span class="status">در حال بررسی</span></div></div>
+<div class="card timeline"><div class="step done"><b>درخواست ثبت شد</b><p>ثبت از طریق سامانه نمایشی</p></div><div class="step done"><b>مدارک کامل است</b><p>بررسی اولیه انجام شد.</p></div><div class="step done"><b>ارجاع به آموزش</b><p>برای بررسی کارشناس آموزش ارسال شده است.</p></div><div class="step"><b>نتیجه نهایی</b><p>پس از تصمیم واحد آموزش، نتیجه همین‌جا نمایش داده می‌شود.</p></div></div>
+</section>
+
+<section id="management" class="screen">
+<h2 class="page-title">نمای مدیریتی آزمایشی</h2><p class="page-sub">اعداد ساختگی‌اند و فقط قابلیت سنجش را نشان می‌دهند.</p><div class="notice">این اعداد نتیجه واقعی دانشگاه نیستند.</div>
+<div class="metric-grid"><div class="metric"><strong>۱:۴۰</strong><span>میانگین زمان پاسخ نمونه</span></div><div class="metric"><strong>۳۱٪</strong><span>کاهش نمونه‌ای پیگیری تکراری</span></div><div class="metric"><strong>۸۷٪</strong><span>پاسخ در اولین مراجعه</span></div><div class="metric"><strong>۲۴</strong><span>درخواست باز نمونه</span></div></div>
+<div class="section-head"><h2>هدف اجرای آزمایشی</h2></div><div class="card" style="font-size:12px;line-height:2;color:var(--muted)">سنجش کاهش زمان پاسخ‌گویی، کاهش مراجعات و پیگیری‌های تکراری، و میزان استفاده دانشجو از یک مسیر واحد برای اطلاعات آموزشی.</div>
+</section>
+</main>
+<nav class="bottom">
+<button class="nav active" data-target="home" onclick="go('home')"><span>⌂</span>خانه</button>
+<button class="nav" data-target="assistant" onclick="go('assistant')"><span>✦</span>دستیار</button>
+<button class="nav" data-target="services" onclick="go('services')"><span>◫</span>خدمات</button>
+<button class="nav" data-target="requests" onclick="go('requests')"><span>✓</span>درخواست</button>
+<button class="nav" data-target="management" onclick="go('management')"><span>▥</span>مدیریت</button>
+</nav>
+</div>
+<div id="modal" class="modal" onclick="hideModal(event)"><div class="sheet"><h3>هدف این نسخه</h3><p>این دمو برای نشان‌دادن یک اجرای آزمایشی محدود ساخته شده است: پاسخ‌گویی، خدمات آموزشی، مهلت‌ها و پیگیری درخواست. هیچ اتصال واقعی یا داده شخصی در آن وجود ندارد.</p><button class="btn" onclick="hideModal()">متوجه شدم</button></div></div>
+<script>
+const answers={
+'حذف‌و‌اضافه تا چه زمانی است؟':'در این نسخه نمایشی، پایان حذف‌و‌اضافه ۲۵ شهریور در نظر گرفته شده است. در نسخه واقعی، تاریخ دقیق از تقویم مورد تأیید دانشگاه نمایش داده می‌شود.',
+'برای انتخاب واحد از کجا شروع کنم؟':'ورود به سامانه آموزشی دانشگاه، بررسی پیش‌نیازها، انتخاب دروس و ثبت نهایی.',
+'برای تکمیل مدارک چه کار کنم؟':'فهرست مدارک موردنیاز نمایش داده می‌شود و وضعیت کامل یا دارای نقص قابل مشاهده است.'
+};
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.target===id));window.scrollTo({top:0,behavior:'smooth'})}
+function tile(el,id){document.querySelectorAll('.quick').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');setTimeout(()=>go(id),120)}
+function addMsg(text,type){const d=document.createElement('div');d.className='msg '+type;d.textContent=text;if(type==='bot'){const s=document.createElement('span');s.className='source';s.textContent='منبع: پایگاه دانش نمایشی / راهنمای آموزشی نمونه';d.appendChild(s)}document.getElementById('chat').appendChild(d);d.scrollIntoView({behavior:'smooth',block:'end'})}
+function ask(q){addMsg(q,'user');setTimeout(()=>addMsg(answers[q]||'در نسخه واقعی، پاسخ فقط بر اساس اطلاعات مورد تأیید دانشگاه ارائه می‌شود.','bot'),180)}
+function sendInput(){const i=document.getElementById('q');const q=i.value.trim();if(!q)return;i.value='';ask(q)}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')sendInput()})
+function toggleGuide(el){el.classList.toggle('open');el.querySelector('.row span').textContent=el.classList.contains('open')?'−':'＋'}
+function showModal(){document.getElementById('modal').classList.add('show')}
+function hideModal(e){if(e&&e.target!==document.getElementById('modal'))return;document.getElementById('modal').classList.remove('show')}
+</script>
+</body></html>
