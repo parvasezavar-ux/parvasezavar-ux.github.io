@@ -630,6 +630,183 @@
 @media(max-width:410px){.assistant-top{gap:6px}.assistant-lang{width:94px}.assistant-demo-copy span{display:none}.assistant-head h1{font-size:22px}.assistant-intro{grid-template-columns:94px minmax(0,1fr);padding:10px}.assistant-visual{width:86px;height:86px}.assistant-question{grid-template-columns:35px minmax(0,1fr);gap:7px;padding:8px}.assistant-q-icon{width:35px;height:35px}.assistant-question span:last-child{font-size:9.1px}}
 @media(max-width:360px){.assistant-questions{grid-template-columns:1fr}.assistant-intro{grid-template-columns:80px minmax(0,1fr)}.assistant-visual{width:74px;height:74px;border-radius:22px}}
 
+/* ===== UAI-ASSISTANT-R1.1: visual fidelity correction only ===== */
+.app.assistant-view .assistant-top{
+  gap:8px;
+  padding:calc(9px + env(safe-area-inset-top)) 2px 11px;
+}
+.app.assistant-view .assistant-demo{gap:7px}
+.app.assistant-view .assistant-avatar{width:46px;height:46px}
+.app.assistant-view .assistant-mark{width:62px;height:54px}
+.app.assistant-view .assistant-lang{width:110px;height:44px}
+.app.assistant-view .assistant-head{padding:14px 7px 8px}
+.app.assistant-view .assistant-head h1{font-size:25px;margin-bottom:4px}
+.app.assistant-view .assistant-notice{
+  margin:1px 0 11px;
+  padding:8px 11px;
+  border-color:rgba(194,231,255,.53);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 14px rgba(55,158,255,.12)
+}
+.app.assistant-view .assistant-intro{
+  grid-template-columns:136px minmax(0,1fr);
+  gap:5px;
+  min-height:158px;
+  padding:10px 11px 8px;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 17% 52%,rgba(67,174,255,.32),transparent 29%),
+    radial-gradient(circle at 52% 0,rgba(89,177,255,.10),transparent 35%),
+    linear-gradient(145deg,rgba(21,68,110,.94),rgba(5,29,56,.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.11),
+    inset 0 -18px 36px rgba(0,9,23,.13),
+    0 9px 23px rgba(0,0,0,.18),
+    0 0 15px rgba(52,153,250,.13)
+}
+.app.assistant-view .assistant-intro:before{
+  width:300px;height:94px;left:-90px;bottom:5px;
+  border-color:rgba(122,203,255,.50);
+  box-shadow:0 0 10px rgba(78,178,255,.58),0 0 28px rgba(50,153,255,.22)
+}
+.app.assistant-view .assistant-intro:after{
+  content:"";position:absolute;left:20px;bottom:7px;width:146px;height:26px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(74,174,255,.32),transparent 68%);filter:blur(3px)
+}
+.app.assistant-view .assistant-visual{
+  width:128px;height:126px;border-radius:36px 36px 30px 30px;
+  align-self:end;
+  background:
+    radial-gradient(circle at 39% 24%,rgba(214,242,255,.34),transparent 22%),
+    radial-gradient(circle at 50% 60%,rgba(53,145,230,.24),transparent 44%),
+    linear-gradient(145deg,rgba(72,164,245,.38),rgba(4,28,58,.96));
+  border-color:rgba(224,244,255,.82);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    inset 0 0 28px rgba(129,207,255,.16),
+    0 0 13px rgba(121,210,255,.75),
+    0 0 34px rgba(44,147,250,.38)
+}
+.app.assistant-view .assistant-visual:before{
+  inset:-19px;
+  transform:scaleY(.52) rotate(18deg);
+  border-color:rgba(115,198,255,.50);
+  box-shadow:0 0 10px rgba(76,174,255,.66),0 0 25px rgba(47,145,247,.22)
+}
+.app.assistant-view .assistant-visual:after{
+  content:"";position:absolute;inset:-30px;border-radius:50%;pointer-events:none;
+  border:1px solid rgba(126,204,255,.25);transform:scaleY(.66) rotate(-19deg)
+}
+.app.assistant-view .assistant-visual svg{
+  width:78px;height:78px;stroke-width:1.65;
+  filter:drop-shadow(0 0 6px rgba(107,207,255,.48))
+}
+.app.assistant-view .assistant-welcome{
+  align-self:center;
+  margin-inline-start:-4px;
+  padding:11px 12px;
+  border-radius:21px 21px 7px 21px;
+  font-size:10.6px;
+  line-height:1.78;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.055),transparent 29%),
+    linear-gradient(145deg,rgba(37,101,162,.82),rgba(9,49,91,.91));
+  border-color:rgba(199,234,255,.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 0 18px rgba(116,198,255,.07),
+    0 0 13px rgba(64,162,255,.16)
+}
+.app.assistant-view .assistant-welcome:before{
+  content:"";position:absolute;left:-8px;top:50%;width:14px;height:14px;
+  transform:translateY(-50%) rotate(45deg);
+  background:#0d3c6b;
+  border-left:1px solid rgba(199,234,255,.62);
+  border-bottom:1px solid rgba(199,234,255,.62)
+}
+.app.assistant-view .assistant-section-head{margin:14px 2px 7px}
+.app.assistant-view .assistant-questions{gap:7px}
+.app.assistant-view .assistant-question{
+  min-height:70px;
+  padding:7px 8px;
+  border-radius:17px;
+  grid-template-columns:36px minmax(0,1fr);
+  gap:7px;
+  border-color:rgba(191,229,255,.52);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.065),transparent 30%),
+    linear-gradient(150deg,rgba(23,73,118,.96),rgba(6,31,59,.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -10px 18px rgba(0,10,25,.09),
+    0 4px 12px rgba(0,0,0,.13),
+    0 0 10px rgba(52,151,247,.08)
+}
+.app.assistant-view .assistant-q-icon{
+  width:36px;height:36px;border-radius:12px;
+  border-color:rgba(210,238,255,.66);
+  background:linear-gradient(145deg,rgba(94,184,251,.30),rgba(7,39,75,.84))
+}
+.app.assistant-view .assistant-question span:last-child{font-size:9.4px;line-height:1.55}
+.app.assistant-view .assistant-chat-stream{
+  gap:7px;
+  margin-top:12px;
+  padding:0 2px;
+}
+.app.assistant-view .assistant-message{
+  max-width:88%;
+  padding:9px 11px;
+  border-radius:18px;
+  font-size:10.3px;
+  line-height:1.75;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 4px 12px rgba(0,0,0,.12)
+}
+.app.assistant-view .assistant-message.user{
+  background:linear-gradient(145deg,rgba(49,136,223,.94),rgba(19,82,153,.97));
+  border-color:rgba(173,220,255,.60)
+}
+.app.assistant-view .assistant-message.bot{
+  background:linear-gradient(145deg,rgba(24,75,122,.94),rgba(7,38,71,.98));
+  border-color:rgba(176,221,255,.42)
+}
+.app.assistant-view .assistant-inputbar{
+  direction:ltr;
+  margin-top:12px;
+  grid-template-columns:44px minmax(0,1fr) 52px;
+  gap:7px;
+  padding:7px 8px;
+  border-radius:27px;
+  border-color:rgba(215,239,255,.78);
+  background:linear-gradient(180deg,rgba(33,83,132,.95),rgba(8,38,71,.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.15),
+    inset 0 0 24px rgba(111,194,255,.08),
+    0 0 11px rgba(113,201,255,.40),
+    0 0 25px rgba(44,143,243,.20)
+}
+#assistant[dir="rtl"] .assistant-inputbar input{direction:rtl;text-align:right}
+#assistant[dir="ltr"] .assistant-inputbar input{direction:ltr;text-align:left}
+#assistant[dir="rtl"] .assistant-welcome:before{left:-8px;right:auto}
+#assistant[dir="ltr"] .assistant-welcome{border-radius:21px 21px 21px 7px;margin-inline-start:0;margin-inline-end:-4px}
+#assistant[dir="ltr"] .assistant-welcome:before{
+  left:auto;right:-8px;
+  border-left:0;border-bottom:0;
+  border-right:1px solid rgba(199,234,255,.62);
+  border-top:1px solid rgba(199,234,255,.62)
+}
+@media(max-width:410px){
+  .app.assistant-view .assistant-top{gap:5px}
+  .app.assistant-view .assistant-avatar{width:43px;height:43px}
+  .app.assistant-view .assistant-mark{width:57px;height:50px}
+  .app.assistant-view .assistant-lang{width:96px;height:42px}
+  .app.assistant-view .assistant-intro{grid-template-columns:116px minmax(0,1fr);min-height:148px;padding:9px 9px 7px}
+  .app.assistant-view .assistant-visual{width:110px;height:110px;border-radius:32px}
+  .app.assistant-view .assistant-visual svg{width:67px;height:67px}
+  .app.assistant-view .assistant-welcome{font-size:10px;line-height:1.72;padding:10px 10px}
+  .app.assistant-view .assistant-question{min-height:68px;grid-template-columns:34px minmax(0,1fr);padding:7px}
+  .app.assistant-view .assistant-q-icon{width:34px;height:34px}
+  .app.assistant-view .assistant-question span:last-child{font-size:8.9px}
+}
+
 </style>
 </head>
 <body>
@@ -727,7 +904,7 @@
 </div>
 <div class="assistant-head"><h1 id="assistantTitle">دستیار هوشمند دانشجو</h1><p id="assistantSubtitle">برای پرسش‌های آموزشی، راهنمای فرایندها، مهلت‌ها و پیگیری درخواست‌ها.</p></div>
 <div class="assistant-notice"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg><span id="assistantNotice">نسخه نمایشی — بدون اتصال به داده واقعی دانشگاه یا اطلاعات شخصی دانشجو</span></div>
-<div class="assistant-intro"><div class="assistant-visual" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="12" y="14" width="40" height="34" rx="13"/><path d="M22 29h.01M42 29h.01M23 37c5 6 13 6 18 0"/><path d="M32 14V8M28 8h8"/></svg></div><div id="assistantWelcome" class="assistant-welcome">سلام!
+<div class="assistant-intro"><div class="assistant-visual" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M21 31c0-11 8-19 19-19s19 8 19 19v10c0 10-8 18-19 18S21 51 21 41Z"/><path d="M18 35h3M59 35h3"/><path d="M31 36c2-3 5-3 7 0M42 36c2-3 5-3 7 0M31 45c5 6 13 6 18 0"/><path d="M40 12V6M36 6h8"/><path d="M18 69c4-9 12-13 22-13s18 4 22 13"/><path d="M27 59v8M53 59v8"/></svg></div><div id="assistantWelcome" class="assistant-welcome">سلام!
 من دستیار هوشمند نسخه دمو هستم.
 می‌تونی درباره خدمات و فرایندهای آموزشی نمونه سؤال بپرسی.</div></div>
 <div class="assistant-section-head"><h2 id="assistantSuggestionsTitle">پیشنهادهایی برای شروع</h2><span id="assistantSuggestionMeta">پرسش‌های نمونه</span></div>
@@ -777,8 +954,8 @@
 <div id="modal" class="modal" onclick="hideModal(event)"><div class="sheet"><h3>هدف این نسخه</h3><p>این دمو برای نشان‌دادن یک اجرای آزمایشی محدود ساخته شده است: پاسخ‌گویی، خدمات آموزشی، مهلت‌ها و پیگیری درخواست. هیچ اتصال واقعی یا داده شخصی در آن وجود ندارد.</p><button class="btn" onclick="hideModal()">متوجه شدم</button></div></div>
 <script>
 const assistantI18n={
-fa:{dir:'rtl',demoLabel:'نسخه نمایشی',demoSub:'بدون داده واقعی دانشجو',title:'دستیار هوشمند دانشجو',subtitle:'برای پرسش‌های آموزشی، راهنمای فرایندها، مهلت‌ها و پیگیری درخواست‌ها.',notice:'نسخه نمایشی — بدون اتصال به داده واقعی دانشگاه یا اطلاعات شخصی دانشجو',welcome:'سلام!\nمن دستیار هوشمند نسخه دمو هستم.\nمی‌تونی درباره خدمات و فرایندهای آموزشی نمونه سؤال بپرسی.',suggestionsTitle:'پیشنهادهایی برای شروع',suggestionMeta:'پرسش‌های نمونه',questions:['برای انتخاب واحد از کجا شروع کنم؟','مراحل حذف‌و‌اضافه چگونه است؟','برای تکمیل مدارک چه کار کنم؟','چطور وضعیت یک درخواست را پیگیری کنم؟'],answers:['در نسخه دمو، انتخاب واحد به‌صورت یک راهنمای نمونه نمایش داده می‌شود: بررسی راهنما و پیش‌نیازهای اعلام‌شده، انتخاب درس و ثبت نهایی. جزئیات واقعی فقط با اطلاعات تأییدشده دانشگاه قابل ارائه است.','در این دمو، فرایند حذف‌و‌اضافه به‌صورت راهنمای مرحله‌ای نمایش داده می‌شود. زمان‌بندی و قوانین واقعی تنها پس از تأیید دانشگاه قابل ارائه است.','در نسخه دمو می‌توان نمونه فهرست مدارک و وضعیت «کامل» یا «نیازمند تکمیل» را نمایش داد. هیچ مدرک واقعی دانشجو یا دانشگاه به این دمو متصل نیست.','در نسخه دمو، وضعیت یک درخواست نمونه می‌تواند مرحله‌به‌مرحله نمایش داده شود. هیچ درخواست واقعی دانشجو به این دمو متصل نیست.'],fallback:'این نسخه پاسخ زنده یا اتصال به سامانه دانشگاه ندارد. پاسخ دقیق فقط با محتوای تأییدشده دانشگاه قابل ارائه است.',placeholder:'سؤال یا درخواستت را اینجا بنویس...',micLabel:'میکروفون در نسخه دمو غیرفعال است',sendLabel:'ارسال سؤال',demoAnswer:'پاسخ نمایشی',footnote:'پاسخ‌های این صفحه نمایشی و بدون اتصال به سامانه واقعی دانشگاه هستند.'},
-en:{dir:'ltr',demoLabel:'Demo version',demoSub:'No real student data',title:'Student AI Assistant',subtitle:'Guidance for academic questions, processes, deadlines, and request tracking.',notice:'Demo version — no connection to real university or personal student data',welcome:'Hello!\nI’m the AI assistant for this demo.\nYou can ask about sample academic services and processes.',suggestionsTitle:'Suggestions to get started',suggestionMeta:'Sample questions',questions:['How do I start course registration?','How does the add/drop process work?','How do I complete required documents?','How can I track a request?'],answers:['In this demo, course registration is shown as a sample guidance flow: review the available guidance and stated prerequisites, choose courses, and complete the final submission. Real details require university-approved information.','In this demo, add/drop is presented as a step-by-step sample process. Real timing and rules can only be shown after university approval.','The demo can show a sample document checklist and a complete or needs-completion state. No real student or university documents are connected.','The demo can show a sample request moving through clear stages. No real student request is connected to this demo.'],fallback:'This demo has no live AI or university-system connection. A precise answer would require university-approved content.',placeholder:'Type your question or request...',micLabel:'Microphone is disabled in this demo',sendLabel:'Send question',demoAnswer:'Demo response',footnote:'Responses on this page are demonstrative and are not connected to a real university system.'}
+fa:{dir:'rtl',demoLabel:'نسخه نمایشی',demoSub:'بدون داده واقعی دانشجو',title:'دستیار هوشمند دانشجو',subtitle:'برای پرسش‌های آموزشی، راهنمای فرایندها، مهلت‌ها و پیگیری درخواست‌ها.',notice:'نسخه نمایشی — بدون اتصال به داده واقعی دانشگاه یا اطلاعات شخصی دانشجو',welcome:'سلام!\nمن دستیار هوشمند نسخه دمو هستم.\nمی‌تونی درباره خدمات و فرایندهای آموزشی نمونه سؤال بپرسی.',suggestionsTitle:'پیشنهادهایی برای شروع',suggestionMeta:'پرسش‌های نمونه',initialUser:'برای انتخاب واحد از کجا شروع کنم؟',initialAssistant:'برای انتخاب واحد، ابتدا پیش‌نیازها و شرایط درس بررسی می‌شود، سپس دروس انتخاب و ثبت نهایی می‌شوند. جزئیات واقعی فقط بر اساس اطلاعات مورد تأیید دانشگاه ارائه می‌شود.',questions:['برای انتخاب واحد از کجا شروع کنم؟','مراحل حذف‌و‌اضافه چگونه است؟','برای تکمیل مدارک چه کار کنم؟','چطور وضعیت یک درخواست را پیگیری کنم؟'],answers:['در نسخه دمو، انتخاب واحد به‌صورت یک راهنمای نمونه نمایش داده می‌شود: بررسی راهنما و پیش‌نیازهای اعلام‌شده، انتخاب درس و ثبت نهایی. جزئیات واقعی فقط با اطلاعات تأییدشده دانشگاه قابل ارائه است.','در این دمو، فرایند حذف‌و‌اضافه به‌صورت راهنمای مرحله‌ای نمایش داده می‌شود. زمان‌بندی و قوانین واقعی تنها پس از تأیید دانشگاه قابل ارائه است.','در نسخه دمو می‌توان نمونه فهرست مدارک و وضعیت «کامل» یا «نیازمند تکمیل» را نمایش داد. هیچ مدرک واقعی دانشجو یا دانشگاه به این دمو متصل نیست.','در نسخه دمو، وضعیت یک درخواست نمونه می‌تواند مرحله‌به‌مرحله نمایش داده شود. هیچ درخواست واقعی دانشجو به این دمو متصل نیست.'],fallback:'این نسخه پاسخ زنده یا اتصال به سامانه دانشگاه ندارد. پاسخ دقیق فقط با محتوای تأییدشده دانشگاه قابل ارائه است.',placeholder:'سؤال یا درخواستت را اینجا بنویس...',micLabel:'میکروفون در نسخه دمو غیرفعال است',sendLabel:'ارسال سؤال',demoAnswer:'پاسخ نمایشی',footnote:'پاسخ‌های این صفحه نمایشی و بدون اتصال به سامانه واقعی دانشگاه هستند.'},
+en:{dir:'ltr',demoLabel:'Demo version',demoSub:'No real student data',title:'Student AI Assistant',subtitle:'Guidance for academic questions, processes, deadlines, and request tracking.',notice:'Demo version — no connection to real university or personal student data',welcome:'Hello!\nI’m the AI assistant for this demo.\nYou can ask about sample academic services and processes.',suggestionsTitle:'Suggestions to get started',suggestionMeta:'Sample questions',initialUser:'How do I start course registration?',initialAssistant:'To start course registration, prerequisites and course requirements are reviewed first, then courses are selected and the final registration is submitted. Real details are provided only from university-approved information.',questions:['How do I start course registration?','How does the add/drop process work?','How do I complete required documents?','How can I track a request?'],answers:['In this demo, course registration is shown as a sample guidance flow: review the available guidance and stated prerequisites, choose courses, and complete the final submission. Real details require university-approved information.','In this demo, add/drop is presented as a step-by-step sample process. Real timing and rules can only be shown after university approval.','The demo can show a sample document checklist and a complete or needs-completion state. No real student or university documents are connected.','The demo can show a sample request moving through clear stages. No real student request is connected to this demo.'],fallback:'This demo has no live AI or university-system connection. A precise answer would require university-approved content.',placeholder:'Type your question or request...',micLabel:'Microphone is disabled in this demo',sendLabel:'Send question',demoAnswer:'Demo response',footnote:'Responses on this page are demonstrative and are not connected to a real university system.'}
 };
 let assistantLanguage='fa';
 function readLanguagePreference(){try{const v=localStorage.getItem('uai-language');return v==='en'?'en':v==='fa'?'fa':'fa'}catch(e){return 'fa'}}
@@ -786,10 +963,11 @@ function writeLanguagePreference(lang){try{localStorage.setItem('uai-language',l
 function setLanguage(lang,persist=true){
  const next=lang==='en'?'en':'fa',t=assistantI18n[next],root=document.getElementById('assistant');assistantLanguage=next;root.lang=next;root.dir=t.dir;
  assistantDemoLabel.textContent=t.demoLabel;assistantDemoSub.textContent=t.demoSub;assistantTitle.textContent=t.title;assistantSubtitle.textContent=t.subtitle;assistantNotice.textContent=t.notice;assistantWelcome.textContent=t.welcome;assistantSuggestionsTitle.textContent=t.suggestionsTitle;assistantSuggestionMeta.textContent=t.suggestionMeta;assistantQ.placeholder=t.placeholder;assistantMic.setAttribute('aria-label',t.micLabel);assistantSend.setAttribute('aria-label',t.sendLabel);assistantFootnote.textContent=t.footnote;
- langFa.classList.toggle('active',next==='fa');langEn.classList.toggle('active',next==='en');langFa.setAttribute('aria-pressed',String(next==='fa'));langEn.setAttribute('aria-pressed',String(next==='en'));renderAssistantQuestions();if(persist)writeLanguagePreference(next)
+ langFa.classList.toggle('active',next==='fa');langEn.classList.toggle('active',next==='en');langFa.setAttribute('aria-pressed',String(next==='fa'));langEn.setAttribute('aria-pressed',String(next==='en'));renderAssistantQuestions();renderInitialChat();if(persist)writeLanguagePreference(next)
 }
 function questionIcon(i){const a=['<svg viewBox="0 0 24 24"><path d="m3 10 9-6 9 6-9 6-9-6Z"/><path d="M7 13v4c3 2 7 2 10 0v-4"/></svg>','<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 17h6"/></svg>','<svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></svg>','<svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v7"/><path d="M14 3v5h5"/><circle cx="16.5" cy="16.5" r="3.5"/><path d="m19 19 2 2"/></svg>'];return a[i]||a[0]}
 function renderAssistantQuestions(){const host=assistantQuestions,t=assistantI18n[assistantLanguage];host.innerHTML='';t.questions.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.className='assistant-question';b.innerHTML='<span class="assistant-q-icon" aria-hidden="true">'+questionIcon(i)+'</span><span></span>';b.querySelector('span:last-child').textContent=q;b.addEventListener('click',()=>askAssistant(i));host.appendChild(b)})}
+function renderInitialChat(){const t=assistantI18n[assistantLanguage];assistantChat.innerHTML='';const u=document.createElement('div');u.className='assistant-message user';const ub=document.createElement('div');ub.textContent=t.initialUser;u.appendChild(ub);assistantChat.appendChild(u);const b=document.createElement('div');b.className='assistant-message bot';const bb=document.createElement('div');bb.textContent=t.initialAssistant;b.appendChild(bb);const note=document.createElement('small');note.textContent=t.demoAnswer;b.appendChild(note);assistantChat.appendChild(b)}
 function addAssistantMessage(text,type){const t=assistantI18n[assistantLanguage],d=document.createElement('div');d.className='assistant-message '+type;const body=document.createElement('div');body.textContent=text;d.appendChild(body);if(type==='bot'){const note=document.createElement('small');note.textContent=t.demoAnswer;d.appendChild(note)}assistantChat.appendChild(d);d.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function askAssistant(i){const t=assistantI18n[assistantLanguage];if(!t.questions[i])return;addAssistantMessage(t.questions[i],'user');setTimeout(()=>addAssistantMessage(t.answers[i],'bot'),140)}
 function sendAssistantInput(){const q=assistantQ.value.trim();if(!q)return;assistantQ.value='';addAssistantMessage(q,'user');setTimeout(()=>addAssistantMessage(assistantI18n[assistantLanguage].fallback,'bot'),140)}
