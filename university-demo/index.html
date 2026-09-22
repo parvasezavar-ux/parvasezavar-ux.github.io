@@ -807,10 +807,160 @@
   .app.assistant-view .assistant-question span:last-child{font-size:8.9px}
 }
 
+
+/* ===== UAI-INTRO-R1: University Showcase before Home ===== */
+.app.intro-open{overflow:hidden;height:100dvh}
+.app.intro-open>.bottom{visibility:hidden;pointer-events:none}
+.intro-screen{
+  position:fixed;z-index:60;inset:0;
+  width:min(480px,100%);margin:0 auto;
+  min-height:100svh;height:100dvh;overflow:auto;
+  padding:calc(18px + env(safe-area-inset-top)) 18px calc(20px + env(safe-area-inset-bottom));
+  color:#f7fbff;text-align:center;
+  background:
+    radial-gradient(circle at 50% 12%,rgba(75,167,255,.28),transparent 24%),
+    radial-gradient(circle at 8% 55%,rgba(25,112,214,.18),transparent 28%),
+    radial-gradient(circle at 92% 70%,rgba(29,121,225,.15),transparent 29%),
+    linear-gradient(180deg,#071e37 0%,#041427 42%,#020b16 100%);
+  overscroll-behavior:none
+}
+.intro-screen[hidden]{display:none}
+.intro-shell{
+  width:100%;max-width:420px;min-height:calc(100dvh - 38px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center
+}
+.intro-kicker{
+  display:inline-flex;align-items:center;gap:7px;
+  min-height:29px;padding:6px 11px;border-radius:999px;
+  border:1px solid rgba(198,231,255,.34);
+  color:#a9d8ff;font-size:8.5px;font-weight:850;letter-spacing:.12em;
+  background:linear-gradient(145deg,rgba(44,111,174,.28),rgba(5,31,60,.68));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 0 15px rgba(53,154,255,.12)
+}
+.intro-kicker:before{
+  content:"";width:6px;height:6px;border-radius:50%;background:#8fd4ff;
+  box-shadow:0 0 8px #62baff,0 0 16px rgba(63,162,255,.65)
+}
+.intro-emblem{
+  position:relative;isolation:isolate;
+  width:clamp(190px,58vw,246px);aspect-ratio:1;
+  margin:18px auto 16px;border:1px solid transparent;border-radius:29%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:
+    linear-gradient(155deg,rgba(9,33,61,.98),rgba(2,13,27,.99)) padding-box,
+    linear-gradient(135deg,#eff9ff 0%,#7397b5 18%,#dcebf5 38%,#5f7d99 58%,#f5fbff 78%,#7091ad 100%) border-box;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.08),
+    inset 0 0 44px rgba(65,156,244,.12),
+    0 0 12px rgba(152,217,255,.56),
+    0 0 32px rgba(48,146,245,.34),
+    0 22px 45px rgba(0,0,0,.28)
+}
+.intro-emblem:before{
+  content:"";position:absolute;inset:9%;z-index:-1;border-radius:50%;
+  border:1px solid rgba(103,185,255,.52);
+  box-shadow:0 0 11px rgba(72,168,255,.35),inset 0 0 20px rgba(65,153,241,.06)
+}
+.intro-emblem:after{
+  content:"";position:absolute;left:12%;right:12%;top:10%;height:1px;
+  background:linear-gradient(90deg,transparent,#f3fbff,transparent);
+  box-shadow:0 0 10px #65bdff;opacity:.78
+}
+.intro-cap,.intro-book{
+  position:relative;z-index:1;stroke:#dcebf6;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 5px rgba(105,195,255,.34))
+}
+.intro-cap{width:58px;height:42px;margin-bottom:0}
+.intro-book{width:94px;height:39px;margin-top:-3px}
+.intro-uai{
+  position:relative;z-index:1;margin:-2px 0 -2px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(57px,17vw,78px);font-weight:700;letter-spacing:-.09em;line-height:1;
+  color:#e9f3fa;
+  text-shadow:0 1px 0 #fff,0 -1px 0 #6f8ca4,0 0 12px rgba(119,199,255,.24)
+}
+.intro-spark{position:absolute;width:7px;height:7px;border-radius:50%;background:#eef9ff;box-shadow:0 0 9px #65bdff,0 0 18px rgba(62,161,255,.65)}
+.intro-spark.s1{top:12%;left:50%;transform:translateX(-50%)}
+.intro-spark.s2{top:47%;left:10%;width:5px;height:5px}
+.intro-spark.s3{top:47%;right:10%;width:5px;height:5px}
+.intro-copy{width:100%;max-width:366px}
+.intro-copy h1{
+  margin:0;color:#fff;font-size:clamp(25px,7.4vw,31px);line-height:1.48;
+  text-shadow:0 0 18px rgba(85,176,255,.16)
+}
+.intro-copy p{
+  max-width:348px;margin:7px auto 0;
+  color:#b8cde0;font-size:11px;line-height:1.9
+}
+.intro-notice{
+  width:100%;max-width:365px;margin:15px auto 0;padding:9px 11px;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  border:1px solid rgba(191,229,255,.39);border-radius:15px;
+  color:#a9c4db;font-size:8.8px;line-height:1.6;
+  background:linear-gradient(145deg,rgba(24,66,106,.65),rgba(6,30,57,.82));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06)
+}
+.intro-notice svg{width:16px;height:16px;flex:0 0 auto;stroke:#9fd9ff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.intro-enter{
+  width:100%;max-width:365px;min-height:54px;margin:14px auto 0;border-radius:18px;
+  border:1px solid rgba(225,244,255,.86);color:#fff;font-size:13px;font-weight:900;
+  background:
+    radial-gradient(circle at 35% 18%,rgba(215,241,255,.26),transparent 29%),
+    linear-gradient(145deg,#62baff,#2477d6 58%,#0b4b9f);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.34),
+    inset 0 -10px 18px rgba(4,54,128,.18),
+    0 0 12px rgba(131,211,255,.52),
+    0 0 25px rgba(45,145,250,.30)
+}
+.intro-enter:active{transform:scale(.985)}
+.intro-enter span{display:inline-flex;align-items:center;gap:8px}
+.intro-enter svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.intro-foot{
+  margin-top:10px;color:#607e9b;font-size:7.8px;line-height:1.6
+}
+@media(max-width:410px){
+  .intro-screen{padding-left:15px;padding-right:15px}
+  .intro-emblem{margin-top:15px;margin-bottom:13px}
+  .intro-notice{margin-top:13px}
+  .intro-enter{margin-top:12px}
+}
+@media(max-height:700px){
+  .intro-shell{justify-content:flex-start}
+  .intro-emblem{width:176px;margin:10px auto}
+  .intro-copy h1{font-size:24px}
+  .intro-copy p{margin-top:4px}
+  .intro-notice{margin-top:10px}
+  .intro-enter{margin-top:10px;min-height:50px}
+}
+
 </style>
 </head>
 <body>
-<div class="app home-view">
+<div class="app home-view intro-open">
+<section id="introShowcase" class="intro-screen" aria-label="معرفی نسخه نمایشی">
+  <div class="intro-shell">
+    <div class="intro-kicker">UNIVERSITY AI ASSISTANT · DEMO</div>
+    <div class="intro-emblem" aria-hidden="true">
+      <span class="intro-spark s1"></span><span class="intro-spark s2"></span><span class="intro-spark s3"></span>
+      <svg class="intro-cap" viewBox="0 0 64 44"><path d="m6 18 26-11 26 11-26 11L6 18Z"/><path d="M17 23v10c10 6 20 6 30 0V23"/><path d="M58 18v11"/><circle cx="58" cy="32" r="2"/></svg>
+      <div class="intro-uai">UAI</div>
+      <svg class="intro-book" viewBox="0 0 100 42"><path d="M50 35C39 24 25 20 8 21c12 4 23 9 42 17V35Z"/><path d="M50 35c11-11 25-15 42-14-12 4-23 9-42 17V35Z"/><path d="M50 35V17"/></svg>
+    </div>
+    <div class="intro-copy">
+      <h1>دستیار هوشمند خدمات دانشجویی</h1>
+      <p>مسیر ساده‌تر برای پرسش‌های آموزشی، راهنمای فرایندها، مهلت‌ها و پیگیری درخواست‌ها</p>
+    </div>
+    <div class="intro-notice">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg>
+      <span>نسخه نمایشی — بدون اتصال به داده واقعی دانشگاه یا اطلاعات شخصی دانشجو</span>
+    </div>
+    <button class="intro-enter" type="button" onclick="enterDemo()" aria-label="ورود به نسخه نمایشی">
+      <span>ورود به دمو <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></span>
+    </button>
+    <div class="intro-foot">محیط نمایشی برای ارائه و اعتبارسنجی تجاری</div>
+  </div>
+</section>
 <header class="top">
 <div class="brand"><img class="logo" src="/favicon.svg" alt="PS"><div><div class="brand-title">دستیار هوشمند خدمات دانشجویی</div><div class="brand-sub">شرکت سزاوار پیشگامان فناوری نوین</div></div></div>
 <div class="demo-badge">نسخه نمایشی</div>
@@ -971,6 +1121,7 @@ function renderInitialChat(){const t=assistantI18n[assistantLanguage];assistantC
 function addAssistantMessage(text,type){const t=assistantI18n[assistantLanguage],d=document.createElement('div');d.className='assistant-message '+type;const body=document.createElement('div');body.textContent=text;d.appendChild(body);if(type==='bot'){const note=document.createElement('small');note.textContent=t.demoAnswer;d.appendChild(note)}assistantChat.appendChild(d);d.scrollIntoView({behavior:'smooth',block:'nearest'})}
 function askAssistant(i){const t=assistantI18n[assistantLanguage];if(!t.questions[i])return;addAssistantMessage(t.questions[i],'user');setTimeout(()=>addAssistantMessage(t.answers[i],'bot'),140)}
 function sendAssistantInput(){const q=assistantQ.value.trim();if(!q)return;assistantQ.value='';addAssistantMessage(q,'user');setTimeout(()=>addAssistantMessage(assistantI18n[assistantLanguage].fallback,'bot'),140)}
+function enterDemo(){const intro=document.getElementById('introShowcase');if(intro)intro.hidden=true;document.querySelector('.app').classList.remove('intro-open');window.scrollTo({top:0,behavior:'auto'})}
 function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');const app=document.querySelector('.app');app.classList.toggle('home-view',id==='home');app.classList.toggle('assistant-view',id==='assistant');document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.target===id));window.scrollTo({top:0,behavior:'smooth'})}
 function tile(el,id){document.querySelectorAll('.quick').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');setTimeout(()=>go(id),120)}
 function sendHomeQuestion(){const i=document.getElementById('homeQ'),q=i.value.trim();if(!q)return;i.value='';go('assistant');setTimeout(()=>{addAssistantMessage(q,'user');addAssistantMessage(assistantI18n[assistantLanguage].fallback,'bot')},80)}
