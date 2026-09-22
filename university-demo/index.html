@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0c3b32">
+<meta id="theme-color" name="theme-color" content="#061a33">
 <title>دستیار هوشمند خدمات دانشجویی — نسخه نمایشی</title>
 <style>
 :root{--bg:#f4f7f5;--card:#fff;--ink:#14201c;--muted:#6c7772;--green:#0c3b32;--green2:#155747;--gold:#c8a94a;--line:#dfe8e3;--soft:#eaf2ee;--shadow:0 10px 28px rgba(12,59,50,.10)}
@@ -28,9 +28,98 @@
 .bottom{position:fixed;z-index:30;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);background:rgba(255,255,255,.96);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.nav{border:0;background:transparent;border-radius:13px;padding:7px 4px;color:#75807b;font-size:10px;font-weight:700}.nav span{display:block;font-size:18px;line-height:1;margin-bottom:4px}.nav.active{color:var(--green);background:#edf4f1}
 .modal{display:none;position:fixed;z-index:50;inset:0;background:rgba(7,26,21,.45);padding:22px;align-items:flex-end;justify-content:center}.modal.show{display:flex}.sheet{width:min(480px,100%);background:#fff;border-radius:22px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.22)}.sheet h3{margin:0 0 8px;font-size:17px}.sheet p{font-size:12px;color:var(--muted);line-height:1.9}.sheet .btn{width:100%;background:var(--green);color:#fff;margin-top:8px}
 .footer-note{text-align:center;color:#8a948f;font-size:9px;padding:18px 8px 0;line-height:1.7}
+
+/* UAI-HOME-R1 — owner-approved Home only */
+body.home-mode{background:#031326}
+body.home-mode .app{
+  background:
+    radial-gradient(circle at 14% 8%,rgba(65,155,255,.16),transparent 28%),
+    radial-gradient(circle at 88% 24%,rgba(27,105,210,.20),transparent 31%),
+    linear-gradient(180deg,#061a33 0%,#041326 56%,#03101f 100%);
+  color:#eef7ff
+}
+body.home-mode .top{display:none}
+#home.screen{padding:calc(10px + env(safe-area-inset-top)) 14px 28px;min-height:100vh;overflow:hidden}
+.home-shell{width:100%;max-width:452px;margin:0 auto}
+.home-header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:9px;margin:1px 0 14px;min-height:52px}
+.home-user{display:flex;align-items:center;gap:8px;min-width:0}
+.home-user-dot{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(160,210,255,.55);background:linear-gradient(145deg,rgba(32,94,159,.82),rgba(6,29,60,.85));box-shadow:inset 0 0 16px rgba(111,192,255,.18),0 0 18px rgba(47,144,255,.12);font-size:15px}
+.home-user-copy{min-width:0}
+.home-user-copy b{display:block;font-size:11px;color:#f3f8ff;white-space:nowrap}
+.home-user-copy span{display:block;font-size:9px;color:#8faecb;margin-top:3px;white-space:nowrap}
+.home-brand{text-align:center;min-width:82px}
+.home-brand-mark{width:38px;height:38px;margin:0 auto 3px;border-radius:12px;display:grid;place-items:center;color:#eaf6ff;font-weight:900;font-size:16px;border:1px solid rgba(179,221,255,.5);background:linear-gradient(145deg,rgba(33,87,147,.9),rgba(7,31,62,.92));box-shadow:inset 0 0 20px rgba(101,182,255,.15),0 0 18px rgba(60,150,255,.12)}
+.home-brand span{font-size:9px;color:#a9c6df;white-space:nowrap}
+.home-demo-pill{justify-self:end;border:1px solid rgba(159,208,255,.35);background:rgba(8,36,69,.72);color:#bad9f5;border-radius:999px;padding:8px 9px;font-size:9px;font-weight:800;white-space:nowrap;box-shadow:inset 0 0 14px rgba(81,159,236,.08)}
+.home-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 112px;align-items:center;gap:8px;border:1px solid rgba(154,208,255,.38);border-radius:26px;padding:20px 18px;background:linear-gradient(145deg,rgba(13,52,94,.92),rgba(4,24,51,.92));box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),inset 0 -24px 50px rgba(0,0,0,.13),0 18px 42px rgba(0,0,0,.22),0 0 28px rgba(49,137,236,.09);overflow:hidden}
+.home-hero:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;left:-70px;top:-80px;background:radial-gradient(circle,rgba(61,161,255,.22),rgba(61,161,255,0) 66%);pointer-events:none}
+.home-hero:after{content:"";position:absolute;right:38%;bottom:-52px;width:190px;height:90px;background:radial-gradient(ellipse,rgba(47,148,255,.22),transparent 68%);pointer-events:none}
+.home-hero-copy{position:relative;z-index:2;min-width:0}
+.home-kicker{display:inline-flex;align-items:center;gap:6px;color:#8ecbff;font-size:10px;font-weight:800;margin-bottom:7px}
+.home-kicker:before{content:"";width:6px;height:6px;border-radius:50%;background:#75c7ff;box-shadow:0 0 11px #75c7ff}
+#home .home-hero h1{font-size:22px;line-height:1.65;margin:0 0 7px;color:#f5f9ff;text-shadow:0 1px 18px rgba(98,177,255,.18)}
+#home .home-hero p{font-size:11px;line-height:1.9;color:#bed1e4;margin:0;max-width:290px}
+.home-truth{display:inline-flex;margin-top:12px;border-radius:999px;padding:7px 9px;background:rgba(6,27,55,.64);border:1px solid rgba(146,199,248,.22);color:#9ebbd5;font-size:9px;font-weight:700}
+.home-visual{height:130px;position:relative;display:grid;place-items:center}
+.ai-orb{position:relative;z-index:3;width:76px;height:76px;border-radius:26px;display:grid;place-items:center;font-weight:900;font-size:20px;letter-spacing:.5px;color:#f1f9ff;background:linear-gradient(145deg,#195a9a,#071d3c 72%);border:1px solid rgba(174,220,255,.66);box-shadow:inset 9px 9px 22px rgba(96,180,255,.13),inset -10px -10px 24px rgba(0,0,0,.24),0 0 24px rgba(62,163,255,.28)}
+.ai-orb:before{content:"";position:absolute;inset:8px;border-radius:20px;border:1px solid rgba(169,221,255,.25)}
+.ai-ring{position:absolute;border-radius:50%;border:1px solid rgba(96,181,255,.38);box-shadow:0 0 18px rgba(68,161,255,.1)}
+.ai-ring.r1{width:104px;height:104px}
+.ai-ring.r2{width:132px;height:72px;transform:rotate(-28deg)}
+.ai-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#a9ddff;box-shadow:0 0 12px #6abfff;right:7px;top:28px}
+.home-question{margin:12px 0 15px;display:grid;grid-template-columns:minmax(0,1fr) 48px;gap:8px;padding:7px;border-radius:20px;border:1px solid rgba(150,205,255,.48);background:linear-gradient(180deg,rgba(16,57,99,.95),rgba(7,31,61,.95));box-shadow:inset 0 0 20px rgba(87,163,237,.08),0 10px 28px rgba(0,0,0,.18)}
+.home-question input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#eef8ff;padding:0 10px;font-size:12px;text-align:right}
+.home-question input::placeholder{color:#7897b5;opacity:1}
+.home-send{min-width:48px;height:48px;border:1px solid rgba(177,222,255,.65);border-radius:16px;background:linear-gradient(145deg,#2c83d8,#12508f);color:#fff;font-size:20px;box-shadow:0 0 18px rgba(61,158,255,.24),inset 0 0 15px rgba(149,213,255,.12)}
+.home-send:active{transform:scale(.96)}
+.home-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:17px 2px 9px}
+.home-section-head h2{margin:0;color:#f2f8ff;font-size:15px}
+.home-section-head span{font-size:9px;color:#7897b4}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.home-action{width:100%;min-height:118px;text-align:right;color:#edf7ff;border:1px solid rgba(152,204,251,.38);border-radius:20px;padding:13px;background:linear-gradient(145deg,rgba(19,61,103,.92),rgba(7,30,59,.95));box-shadow:inset 0 0 22px rgba(99,173,243,.08),0 8px 20px rgba(0,0,0,.17);display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;align-items:start}
+.home-action:active{transform:scale(.98);border-color:rgba(182,222,255,.7)}
+.home-action-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(50,112,177,.92),rgba(10,42,77,.9));border:1px solid rgba(157,211,255,.42);font-size:19px;box-shadow:inset 0 0 14px rgba(117,192,255,.12)}
+.home-action-copy{min-width:0}
+.home-action b{display:block;font-size:12px;line-height:1.55;margin:1px 0 4px}
+.home-action small{display:block;font-size:9px;line-height:1.65;color:#91adc7}
+.home-status-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.home-status{min-height:76px;border-radius:18px;padding:12px 13px;border:1px solid rgba(143,197,246,.3);background:rgba(7,30,59,.72);box-shadow:inset 0 0 18px rgba(87,162,231,.05)}
+.home-status .label{font-size:9px;color:#7393b0;margin-bottom:5px}
+.home-status b{display:block;color:#e8f5ff;font-size:11px;line-height:1.55}
+.home-status span{display:block;color:#7e9bb6;font-size:9px;line-height:1.6;margin-top:2px}
+.home-deadline-note{margin-top:9px;display:flex;align-items:center;gap:10px;border-radius:17px;padding:11px 12px;border:1px solid rgba(143,197,246,.24);background:rgba(6,25,49,.72);color:#9fbad2;font-size:9px;line-height:1.7}
+.home-deadline-note .dot{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#52b8ff;box-shadow:0 0 11px rgba(82,184,255,.7)}
+.home-services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.home-service{min-width:0;min-height:84px;border:1px solid rgba(142,197,246,.3);border-radius:17px;background:linear-gradient(160deg,rgba(17,55,94,.82),rgba(6,27,54,.92));color:#e9f5ff;padding:9px 5px;font-size:9px;font-weight:800;line-height:1.55}
+.home-service span{display:grid;place-items:center;width:32px;height:32px;margin:0 auto 7px;border-radius:11px;background:rgba(27,83,136,.65);border:1px solid rgba(158,210,255,.28);font-size:15px}
+.home-service:active{transform:scale(.97)}
+.home-footer{text-align:center;color:#607f9b;font-size:8px;line-height:1.7;padding:17px 8px 2px}
+body.home-mode .bottom{background:rgba(3,17,35,.94);backdrop-filter:blur(20px);border-top:1px solid rgba(143,197,246,.18);box-shadow:0 -12px 35px rgba(0,0,0,.2)}
+body.home-mode .nav{color:#7898b7;background:transparent;min-height:49px}
+body.home-mode .nav.active{color:#eef8ff;background:linear-gradient(180deg,rgba(38,102,166,.48),rgba(15,55,96,.35));box-shadow:inset 0 0 14px rgba(98,179,255,.08)}
+body.home-mode .nav.active span{filter:drop-shadow(0 0 8px rgba(92,181,255,.7))}
+@media(max-width:410px){
+  #home.screen{padding-left:12px;padding-right:12px}
+  .home-header{gap:6px}
+  .home-user-copy span{display:none}
+  .home-brand{min-width:74px}
+  .home-hero{grid-template-columns:minmax(0,1fr) 96px;padding:18px 14px}
+  #home .home-hero h1{font-size:20px}
+  .home-visual{height:118px}
+  .ai-orb{width:68px;height:68px;border-radius:23px}
+  .ai-ring.r1{width:94px;height:94px}
+  .ai-ring.r2{width:116px;height:64px}
+  .home-action{padding:11px;grid-template-columns:38px minmax(0,1fr);gap:8px}
+  .home-action-icon{width:38px;height:38px}
+  .home-service{font-size:8.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  #home *,body.home-mode .bottom *{scroll-behavior:auto!important;transition:none!important}
+}
+
 </style>
 </head>
-<body>
+<body class="home-mode">
 <div class="app">
 <header class="top">
 <div class="brand"><img class="logo" src="/favicon.svg" alt="PS"><div><div class="brand-title">دستیار هوشمند خدمات دانشجویی</div><div class="brand-sub">شرکت سزاوار پیشگامان فناوری نوین</div></div></div>
@@ -38,20 +127,80 @@
 </header>
 <main>
 <section id="home" class="screen active">
-<div class="hero"><div class="eyebrow">نمونه پیشنهادی برای اجرای آزمایشی محدود</div><h1>پاسخ سریع‌تر، پیگیری روشن‌تر، مراجعه کمتر</h1><p>یک لایه ساده و هوشمند برای پاسخ‌گویی دانشجویی، راهنمای فرایندها، یادآوری مهلت‌ها و پیگیری درخواست‌ها.</p><div class="hero-actions"><button class="btn btn-gold" onclick="go('assistant')">نمایش دستیار AI</button><button class="btn btn-light" onclick="showModal()">هدف دمو</button></div></div>
-<div class="section-head"><h2>کارهای اصلی</h2><span>داده‌ها آزمایشی‌اند</span></div>
-<div class="grid2">
-<button class="card quick" onclick="tile(this,'assistant')"><div class="icon">✦</div><b>پرسش از دستیار</b><small>انتخاب واحد، حذف‌و‌اضافه، مدارک و امور آموزشی</small></button>
-<button class="card quick" onclick="tile(this,'services')"><div class="icon">◫</div><b>خدمات آموزشی</b><small>انتخاب واحد، حذف‌و‌اضافه، تقویم و مدارک</small></button>
-<button class="card quick" onclick="tile(this,'requests')"><div class="icon">✓</div><b>پیگیری درخواست</b><small>وضعیت مرحله‌به‌مرحله بدون تماس و مراجعه</small></button>
-<button class="card quick" onclick="tile(this,'management')"><div class="icon">▥</div><b>نمای مدیریتی</b><small>شاخص‌های نمونه برای سنجش اجرای آزمایشی</small></button>
+<div class="home-shell">
+  <div class="home-header">
+    <div class="home-user">
+      <div class="home-user-dot" aria-hidden="true">◇</div>
+      <div class="home-user-copy"><b>حالت دمو</b><span>بدون ورود دانشجو</span></div>
+    </div>
+    <div class="home-brand" aria-label="دستیار هوشمند">
+      <div class="home-brand-mark" aria-hidden="true">AI</div>
+      <span>خدمات دانشجویی</span>
+    </div>
+    <div class="home-demo-pill">نسخه نمایشی</div>
+  </div>
+
+  <div class="home-hero">
+    <div class="home-hero-copy">
+      <div class="home-kicker">دستیار خدمات دانشجویی</div>
+      <h1>دستیار هوشمند خدمات دانشجویی</h1>
+      <p>مسیر ساده‌تر برای پرسش‌های آموزشی، راهنمای فرایندها، مهلت‌ها و پیگیری درخواست‌ها.</p>
+      <div class="home-truth">بدون اتصال واقعی دانشگاه یا داده شخصی</div>
+    </div>
+    <div class="home-visual" aria-hidden="true">
+      <div class="ai-ring r1"></div>
+      <div class="ai-ring r2"></div>
+      <div class="ai-orb">AI</div>
+      <div class="ai-dot"></div>
+    </div>
+  </div>
+
+  <form class="home-question" onsubmit="homeSend(event)">
+    <input id="home-q" aria-label="سؤال از دستیار" autocomplete="off" placeholder="سؤال یا درخواستت رو اینجا بنویس...">
+    <button class="home-send" type="submit" aria-label="ارسال سؤال">←</button>
+  </form>
+
+  <div class="home-section-head"><h2>دسترسی سریع</h2><span>قابلیت‌های دمو</span></div>
+  <div class="home-grid">
+    <button class="home-action" onclick="go('assistant')">
+      <span class="home-action-icon" aria-hidden="true">✦</span>
+      <span class="home-action-copy"><b>پاسخ‌گویی سریع دانشجو</b><small>پرسش‌های آموزشی در محیط دستیار</small></span>
+    </button>
+    <button class="home-action" onclick="go('requests')">
+      <span class="home-action-icon" aria-hidden="true">✓</span>
+      <span class="home-action-copy"><b>پیگیری درخواست</b><small>مشاهده وضعیت نمونه مرحله‌به‌مرحله</small></span>
+    </button>
+    <button class="home-action" onclick="scrollToDeadlines()">
+      <span class="home-action-icon" aria-hidden="true">⌚</span>
+      <span class="home-action-copy"><b>یادآوری و مهلت‌ها</b><small>نمایش فقط بر اساس تقویم تأییدشده</small></span>
+    </button>
+    <button class="home-action" onclick="go('services')">
+      <span class="home-action-icon" aria-hidden="true">◫</span>
+      <span class="home-action-copy"><b>خدمات آموزشی</b><small>انتخاب واحد، فرایندها و اطلاعات آموزشی</small></span>
+    </button>
+  </div>
+
+  <div class="home-section-head"><h2>وضعیت این نسخه</h2><span>Demo</span></div>
+  <div class="home-status-grid">
+    <div class="home-status"><div class="label">اتصال دانشگاه</div><b>غیرفعال در دمو</b><span>هیچ سامانه واقعی متصل نیست</span></div>
+    <div class="home-status"><div class="label">اطلاعات دانشجو</div><b>استفاده نمی‌شود</b><span>بدون احراز هویت یا داده شخصی</span></div>
+  </div>
+
+  <div id="home-deadlines" class="home-deadline-note">
+    <span class="dot" aria-hidden="true"></span>
+    <span><b style="color:#dcefff">مهلت‌ها و یادآوری‌ها:</b> تاریخ و اعلان واقعی فقط پس از تأیید و اتصال دانشگاه نمایش داده می‌شود.</span>
+  </div>
+
+  <div class="home-section-head"><h2>خدمات پرکاربرد</h2><span>حوزه تأییدشده دمو</span></div>
+  <div class="home-services">
+    <button class="home-service" onclick="go('services')"><span aria-hidden="true">▣</span>انتخاب واحد</button>
+    <button class="home-service" onclick="go('services')"><span aria-hidden="true">＋</span>حذف‌و‌اضافه</button>
+    <button class="home-service" onclick="scrollToDeadlines()"><span aria-hidden="true">◷</span>مهلت‌ها</button>
+    <button class="home-service" onclick="go('services')"><span aria-hidden="true">≡</span>راهنمای فرایندها</button>
+  </div>
+
+  <div class="home-footer">نسخه نمایشی تجاری — بدون داده واقعی دانشجو و بدون اتصال عملیاتی دانشگاه</div>
 </div>
-<div class="section-head"><h2>مهلت‌های مهم نمونه</h2><span>تقویم نمایشی</span></div>
-<div class="card">
-<div class="deadline"><div class="datebox"><strong>۲۵</strong><span>شهریور</span></div><div><h3>پایان حذف‌و‌اضافه</h3><p>تا ساعت ۲۳:۵۹ — تقویم آموزشی نمونه</p></div></div>
-<div class="deadline"><div class="datebox"><strong>۳۰</strong><span>شهریور</span></div><div><h3>آخرین مهلت تکمیل مدارک</h3><p>برای درخواست‌های آموزشی ثبت‌شده</p></div></div>
-</div>
-<div class="footer-note">این نسخه صرفاً دمو است و به هیچ سامانه واقعی دانشگاه متصل نیست.</div>
 </section>
 
 <section id="assistant" class="screen">
@@ -101,7 +250,28 @@ const answers={
 'برای انتخاب واحد از کجا شروع کنم؟':'ورود به سامانه آموزشی دانشگاه، بررسی پیش‌نیازها، انتخاب دروس و ثبت نهایی.',
 'برای تکمیل مدارک چه کار کنم؟':'فهرست مدارک موردنیاز نمایش داده می‌شود و وضعیت کامل یا دارای نقص قابل مشاهده است.'
 };
-function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.target===id));window.scrollTo({top:0,behavior:'smooth'})}
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.target===id));
+  document.body.classList.toggle('home-mode',id==='home');
+  const theme=document.getElementById('theme-color');
+  if(theme)theme.setAttribute('content',id==='home'?'#061a33':'#0c3b32');
+  window.scrollTo({top:0,behavior:'smooth'})
+}
+function homeSend(e){
+  e.preventDefault();
+  const i=document.getElementById('home-q');
+  const q=i.value.trim();
+  if(!q)return;
+  i.value='';
+  go('assistant');
+  ask(q);
+}
+function scrollToDeadlines(){
+  const el=document.getElementById('home-deadlines');
+  if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
+}
 function tile(el,id){document.querySelectorAll('.quick').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');setTimeout(()=>go(id),120)}
 function addMsg(text,type){const d=document.createElement('div');d.className='msg '+type;d.textContent=text;if(type==='bot'){const s=document.createElement('span');s.className='source';s.textContent='منبع: پایگاه دانش نمایشی / راهنمای آموزشی نمونه';d.appendChild(s)}document.getElementById('chat').appendChild(d);d.scrollIntoView({behavior:'smooth',block:'end'})}
 function ask(q){addMsg(q,'user');setTimeout(()=>addMsg(answers[q]||'در نسخه واقعی، پاسخ فقط بر اساس اطلاعات مورد تأیید دانشگاه ارائه می‌شود.','bot'),180)}
